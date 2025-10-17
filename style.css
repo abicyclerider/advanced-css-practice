@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.exercise {
+    background: white;
+    color: #333;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.exercise h2 {
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.demo-container,
+.perspective-container {
+    min-height: 200px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.perspective-container {
+    perspective: 800px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+}
+
+/* ==========================================
+   STEP 1: YOUR FIRST TASK STARTS HERE
+   ========================================== */
+
+/* TODO: Add a transform to .box-1:hover
+   Make it move 50px to the right and 20px down
+   Hint: Use translateX() and translateY() or translate() */
+
+.box-1:hover {
+    transform: translate(50px, 20px);
+}
+
+/* ==========================================
+   STEP 2: Scale Transform
+   ========================================== */
+
+/* TODO: Add a transform to .box-2:hover
+   Make it grow to 1.5 times its size
+   Hint: Use scale() */
+
+.box-2:hover {
+    transform: scale(2);
+}
+
+/* ==========================================
+   STEP 3: Rotate Transform
+   ========================================== */
+
+/* TODO: Add a transform to .box-3:hover
+   Make it rotate 45 degrees
+   Hint: Use rotate() */
+
+.box-3:hover {
+    transform: rotate(45deg);
+}
+
+/* ==========================================
+   STEP 4: 3D Rotation with Perspective
+   ========================================== */
+
+/* TODO: Add a transform to .box-4:hover
+   Make it rotate 180 degrees around the Y axis
+   Hint: Use rotateY()
+   Note: The parent already has perspective set! */
+
+.box-4:hover {
+    transform: rotateY(180deg)
+}
+
+/* ==========================================
+   STEP 5: translate3d()
+   ========================================== */
+
+/* TODO: Add a transform to .box-5:hover
+   Move it 30px right, 20px down, and 100px toward the viewer
+   Hint: Use translate3d(x, y, z) */
+
+.box-5:hover {
+    transform: translate3d(0px, 0px, 100px);
+}
+
+/* ==========================================
+   STEP 6: rotate3d()
+   ========================================== */
+
+/* TODO: Add a transform to .box-6:hover
+   Rotate it around a custom axis (1, 1, 0) by 180 degrees
+   Hint: Use rotate3d(x, y, z, angle) */
+
+.box-6:hover {
+    transform: rotate3d(1, 1, 0, 180deg);
+}
+
+/* ==========================================
+   CHALLENGE: Card Flip
+   ========================================== */
+
+.card {
+    width: 200px;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* TODO: When hovering .card, rotate it 180deg on Y axis to reveal the back */
+.card:hover {
+    transform: rotateY(180deg);
+}
